@@ -5,5 +5,7 @@ eval $(docker-machine env default)
 
 docker-compose down
 
+docker-machine stop default
+
 # Shut down SSH tunnels
 pkill -f "ssh.*docker"
