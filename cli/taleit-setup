@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Install docker
+
+# pull down submodules, npm install in each of them

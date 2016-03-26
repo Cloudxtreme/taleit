@@ -1,0 +1,19 @@
+{
+  "name": "taleit",
+  "version": "1.0.0",
+  "description": "taleit",
+  "bin": "./cli/taleit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taleit/taleit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taleit/taleit/issues"
+  },
+  "homepage": "https://github.com/taleit/taleit#readme",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}

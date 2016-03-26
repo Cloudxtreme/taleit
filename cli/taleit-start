@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DOCKER_MACHINE=default
+
+# TODO: Ensure docker dependencies are installed
+
+# Source default docker-machine
+docker-machine start $DOCKER_MACHINE
+eval $(docker-machine env $DOCKER_MACHINE)
+
+# TODO: Load .env
+
+# SSH forwarding
+docker-machine ssh $DOCKER_MACHINE -f -N -L "3000:localhost:3000"
+
+# Run docker-compose
+docker-compose up -d
+
+docker-compose logs
