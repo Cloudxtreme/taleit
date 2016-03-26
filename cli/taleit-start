@@ -1,8 +1,7 @@
 #!/bin/bash
 
-DOCKER_MACHINE=default
-
-# TODO: Ensure docker dependencies are installed
+DOCKER_MACHINE=taleit
+docker-machine create --driver virtualbox $DOCKER_MACHINE
 
 # Source default docker-machine
 docker-machine start $DOCKER_MACHINE

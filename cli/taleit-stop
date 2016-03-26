@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Source default docker-machine
-eval $(docker-machine env default)
+eval $(docker-machine env taleit)
 
 docker-compose down
 
-docker-machine stop default
+docker-machine stop taleit
 
 # Shut down SSH tunnels
 pkill -f "ssh.*docker"
