@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Get current directory
+current_dir=$(cd -P "$(dirname "$0")" && pwd)
+
+# Set environment
+source "$current_dir/scripts/set-environment.sh"
+
+# Restart
+docker-compose restart
+
+# Open logs
+docker-compose logs
