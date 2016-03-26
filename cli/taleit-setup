@@ -4,5 +4,6 @@
 
 
 # Create "taleit" docker-machine
+docker-machine create --driver virtualbox taleit
 
 # pull down submodules, npm install in each of them

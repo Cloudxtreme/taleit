@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# Source default docker-machine
-eval $(docker-machine env taleit)
+# Get current directory
+current_dir=$(cd -P "$(dirname "$0")" && pwd)
 
+# Set environment
+source "$current_dir/scripts/set-environment.sh"
+
+# Shut down docker-compose containers
 docker-compose down
 
+# Shut down virtual machine
 docker-machine stop taleit
 
 # Shut down SSH tunnels

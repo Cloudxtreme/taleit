@@ -1,18 +1,19 @@
 #!/bin/bash
 
-DOCKER_MACHINE=taleit
-docker-machine create --driver virtualbox $DOCKER_MACHINE
+# Get current directory
+current_dir=$(cd -P "$(dirname "$0")" && pwd)
 
-# Source default docker-machine
-docker-machine start $DOCKER_MACHINE
-eval $(docker-machine env $DOCKER_MACHINE)
+# Start docker-machine
+docker-machine start taleit
 
-# TODO: Load .env
+# Set environment
+source "$current_dir/scripts/set-environment.sh"
 
 # SSH forwarding
-docker-machine ssh $DOCKER_MACHINE -f -N -L "3000:localhost:3000"
+docker-machine ssh taleit -f -N -L "$WEB_PORT:localhost:$WEB_PORT"
 
 # Run docker-compose
 docker-compose up -d
 
+# Open logs
 docker-compose logs
