@@ -4,7 +4,10 @@ services:
     container_name: taleit-web
     build: ./web
     env_file: .env
+    environment:
+      - NODE_ENV=development
     volumes:
-      - ./web:/app
+      - ./web:/app/:rw
     ports:
       - "${WEB_PORT}:${WEB_PORT}"
+    command: npm start
