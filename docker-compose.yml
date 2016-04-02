@@ -10,4 +10,3 @@ services:
       - ./web:/app/:rw
     ports:
       - "${WEB_PORT}:${WEB_PORT}"
-    command: npm start

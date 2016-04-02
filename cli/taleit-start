@@ -3,11 +3,13 @@
 # Get current directory
 current_dir=$(cd -P "$(dirname "$0")" && pwd)
 
+cd -P "$(dirname $current_dir)"
+
 # Start docker-machine
 docker-machine start taleit
 
 # Set environment
-source "$current_dir/scripts/set-environment.sh"
+source "./cli/scripts/set-environment.sh"
 
 # SSH forwarding
 docker-machine ssh taleit -f -N -L "$WEB_PORT:localhost:$WEB_PORT"

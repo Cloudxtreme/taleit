@@ -2,8 +2,7 @@
 
 # Install docker
 
-
 # Create "taleit" docker-machine
-docker-machine create --driver virtualbox taleit
+docker-machine create --driver xhyve --xhyve-experimental-nfs-share taleit
 
 # pull down submodules, npm install in each of them
